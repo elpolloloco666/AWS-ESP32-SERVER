@@ -76,7 +76,7 @@ app.get('/users/:id', (req, res)=>{
 });
 
 app.get('/publish',(req,res)=>{
-    exec("aws --region us-east-1 iot-data publish --topic 'inTopic' --cli-binary-format raw-in-base64-out --payload 'Hello world'"
+    exec("aws --region us-east-1 iot-data publish --topic 'inTopic' --cli-binary-format raw-in-base64-out --payload '{\"llave\":\"valor\"}'"
     ,(error,stdout,stderr)=>{
         if(error){
             res.status(200).send(error);
